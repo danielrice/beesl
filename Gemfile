@@ -5,6 +5,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'authlogic', '2.1.6'
 gem 'paperclip'
 gem 'ckeditor', '3.4.2.pre'
+gem 'acts_as_list'
 
 # Use unicorn as the web server
 # gem 'unicorn'

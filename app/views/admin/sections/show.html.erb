@@ -3,7 +3,7 @@
 	<div id='sidebar_div' class='span-3'>
 		<ul class='sidebar_list'>
 		<% for page in @section.pages %>
-			<li><%= link_to_remote "#{page.name}", :update=>'show_page', :url => { :controller=>'admin/pages',:action=>'show_page', :id=>page.id }, :html=>{} %></li>
+			<li><%= link_to "#{page.name}", :remote => true, :update=>'show_page', :url => { :controller=>'admin/pages',:action=>'show_page', :id=>page.id }, :html=>{} %></li>
 			<hr/>
 		<% end %>
 		</ul>
