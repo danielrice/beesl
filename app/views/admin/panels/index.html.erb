@@ -1,0 +1,28 @@
+<!--/panels-->
+<div class="classic">
+	<%= link_to "New panel >>", new_admin_panel_path, :class=>"jqButton right" %>
+	<h3>All Panels</h3>
+	
+	<table>
+		<tr>
+			<th>Title</th>
+			<th>Page</th>
+			<th>Section</th>
+			<th>Options</th>
+		</tr>
+
+	<% @panels.each do |panel| %>
+		<tr>
+			<td><%=h panel.title %></td>
+			<td><%=h Page.find(panel.page_id).name %></td>
+			<td><%=h Section.find(Page.find(panel.page_id).section_id).name %></td>
+			<td>
+				<%= link_to 'Edit', edit_admin_panel_path(panel) %> | 
+				<%= link_to 'Delete', admin_panel_path(panel), :confirm => 'Are you sure?', :method => :delete %>
+			</td>
+		</tr>
+	<% end %>
+	</table>
+
+</div>
+<%= link_to "<< Back to general controls", '/backside' %>

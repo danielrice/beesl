@@ -1,0 +1,7 @@
+<!-- pages/_show -->
+<!-- assumed variable: page -->
+<div class='panels_container'>
+	<% for panel in page.panels %>
+		<%= render :partial => 'panels/show', :locals => { :panel => panel } %>
+	<% end %>
+</div>

@@ -1,0 +1,28 @@
+<div id='sections_list' class='classic'>
+	<%= link_to "New section >>", new_admin_section_path, :class=>"jqButton right" %>
+	<h3>All Sections</h3>
+	
+	<div class="rightArea">
+		<ul>
+			<li>drag to change the order</li>
+			<li>edit and delete options</li>
+		</ul>
+	</div>
+	
+	<ul id="sections_index">
+	<% @sections.each do |section| %>
+		<% content_tag_for :li, section do %>
+			<ul class="sections_inner">
+				<li class="leftComponent"><span class="handle"> [drag] </span> <%= section.name %></li>
+				<li class="rightComponent">
+					<%= link_to "Edit", edit_admin_section_path(section) %>
+					<%= link_to 'X', section, :confirm=>"Are you sure?  Deleting a section is permanent, and all its panels will be gone!", :method => :delete, :class=>'delete_link' %>
+				</li>
+			</ul>
+		<% end %>
+	<% end %>
+	</ul>
+	
+	<%= sortable_element("sections_index", :url => sort_admin_sections_path, :handle => "handle") %>
+</div>
+<%= link_to "<< Back to general controls", '/backside' %>

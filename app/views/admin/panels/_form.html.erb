@@ -1,0 +1,31 @@
+<!--
+Partial for admin/panels/new and admin/panels/edit.
+Variables assumed: button_value
+Uses CKEditor-->
+<% form_for([:admin, @panel], :html=>{ :multipart => true }) do |f| %>
+	<%= f.error_messages %>
+	<p>
+		<label>Title: </label><%= f.text_field :title %>
+		<label>Page this panel belongs to: </label>
+		<%= collection_select :panel, :page_id, Page.all, :id, :name, { :prompt => "[Select page]" } %>
+		<br/>
+		<label>Upload image: </label>
+		<%= f.file_field :image %>
+		<% if @panel.image.exists? %>
+			<p>
+				<%= image_tag @panel.image.url %>
+				<%= link_to 'Remove image', { :action => 'delete_image', :id => @panel.id }, :confirm => "Other changes on this page will not be updated yet." %>
+			</p>
+		<% end %>
+	</p>
+	<p>
+		<%= f.ckeditor_textarea :panel, :content %>
+	</p>
+	<p>
+		<%= f.submit button_value %>
+	</p>
+<% end %>
+
+<% content_for :head do %>
+	<%= javascript_include_tag :ckeditor %>
+<% end %>

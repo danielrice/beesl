@@ -1,0 +1,12 @@
+<% form_for([:admin, section]) do |f| %>
+	<p>
+		<%= f.label :name %>
+		<%= f.text_field :name, :size=>15 %>
+	</p>
+	<p>
+		<%= f.label :has_sidebar %>
+		<%= f.check_box :has_sidebar %>
+	</p>
+	
+	<%= f.submit button_value %>
+<% end %>

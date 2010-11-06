@@ -1,0 +1,36 @@
+<div class='classic'>
+	<h2>My Account</h2>
+	<div class="rightArea">
+		You user info.
+	</div>
+	<div>
+		<%= error_messages_for :user %>
+		<% form_for current_user do |f| -%>
+			<p>
+				<label>Change login</label><br/>
+				<%= f.text_field :login %>
+			</p>
+
+			<p>
+				<label>Change email</label><br/>
+				<%= f.text_field :email %>
+			</p>
+			
+			<a href="#" id='change_pw_area_trigger'>Change password >></a>
+			<div id='change_pw_area' style='display:none'>
+				<p>
+					<%= label_tag 'password' %><br/>
+					<%= f.password_field :password %>
+				</p>
+
+				<p>
+					<%= label_tag 'password_confirmation', 'Confirm Password' %><br/>
+					<%= f.password_field :password_confirmation %>
+				</p>
+			</div>
+			<p>
+				<%= submit_tag 'Update' %> <%= link_to 'Delete', current_user, :method=>:delete, :confirm=>"Are you sure you want to delete your account?" %>
+			</p>
+		<% end -%>
+	</div>
+</div>

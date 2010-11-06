@@ -2,6 +2,25 @@ Beesl::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
+	resources :sections, :only => [ :index, :show ]
+	resources :panels, :only => [ :show ]
+	resources :pages, :only => [ :show ]
+	
+	resources :users, :except => :show
+	resource :user_session, :only => [ :create, :destroy ]
+	
+	namespace "admin" do
+		resources :sections, :collection => { :sort => :post }
+		resources :panels, :except => [ :show ]
+		resources :pages
+	end
+	
+	match '/signup' => 'users#new'
+  match '/logout' => 'user_sessions#destroy'
+	match '/backside' => 'static#general_controls'
+	
+	root :to => "sections"
+	
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
@@ -48,11 +67,11 @@ Beesl::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  # root :to => "sections"
 
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id(.:format)))'
+  match ':controller(/:action(/:id(.:format)))'
 end

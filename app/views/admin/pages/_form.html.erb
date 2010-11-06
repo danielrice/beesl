@@ -1,0 +1,13 @@
+<% form_for([:admin, @page]) do |f| %>
+	<%= f.error_messages %>
+	<p>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+		<label>Section this page belongs to: </label>
+		<%= collection_select :page, :section_id, Section.all, :id, :name, { :prompt => "[Select section]" } %>
+	</p>
+	
+	<p>
+		<%= f.submit button_name %>
+	</p>
+<% end %>

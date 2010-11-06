@@ -1,0 +1,24 @@
+<div id='users_index' class='classic' style='display:none'>
+	<h3>Users</h3>
+	<table>
+	<tr>
+		<th>Login</th>
+		<th>Email</th>
+		<th>Options</th>
+	</tr>
+	<% for user in users %>
+	<tr>
+		<td><%= user.login %></td>
+		<td><%= user.email %></td>
+		<td>
+			<% if user.id == current_user.id %>
+				<%= link_to 'Edit', edit_user_path(user) %> | 
+				<%= link_to 'Delete', user, :method=>:delete, :confirm=>"Are you sure you want to delete '#{user.login}'?" %>
+			<% else %>
+				<i>No options</i>
+			<% end %>
+		</td>
+	</tr>
+	<% end %>
+	</table>
+</div>

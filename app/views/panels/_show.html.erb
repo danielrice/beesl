@@ -1,0 +1,13 @@
+<!-- panels/_show; called from section/show AND admin/section/show or corresponding page shows-->
+<!--Assumes variable 'panel' initialized-->
+<div class='panel_div'>
+	<h3><%= panel.title %></h3>
+	<% if panel.image.exists? %>
+		<div class='panel_image'>
+			<%= image_tag panel.image.url %>
+		</div>
+	<% end %>
+	<div>
+		<p><%=sanitize panel.content %></p>
+	</div>
+</div>
