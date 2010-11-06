@@ -19,7 +19,7 @@ Beesl::Application.routes.draw do
   match '/logout' => 'user_sessions#destroy'
 	match '/backside' => 'static#general_controls'
 	
-	root :to => "sections"
+	root :to => "sections#index"
 	
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

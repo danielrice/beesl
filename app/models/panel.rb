@@ -1,4 +1,6 @@
 class Panel < ActiveRecord::Base
+	include Paperclip
+
 	belongs_to :page
 	acts_as_list
 	
