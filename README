@@ -1,3 +1,7 @@
 This will hopefully be the beesl app in Rails 3, started from scratch in Rails 3.
 
+TODO:
+-testing
+-before production, run bundle package to get all needed gems in vendor/cache
+
 ~David Zhang
