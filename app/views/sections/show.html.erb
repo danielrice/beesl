@@ -4,7 +4,7 @@
 		<ul class='sidebar_list'>
 		<% for page in @section.pages %>
 			<!--Need to modify this-->
-			<li><%= link_to "#{page.name}", :remote => true, :update=>'show_page', :url => { :controller=>'pages',:action=>'show_page', :id=>page.id }, :html=>{} %></li>
+			<li><%= link_to "#{page.name}", :remote => true %></li>
 			<hr/>
 		<% end %>
 		</ul>

@@ -1,7 +1,10 @@
 This will hopefully be the beesl app in Rails 3, started from scratch in Rails 3.
 
 TODO:
+-UJS
+-sort_admin_sections_path error
 -testing
+-db setup - mysql2
 -before production, run bundle package to get all needed gems in vendor/cache
 
 ~David Zhang
