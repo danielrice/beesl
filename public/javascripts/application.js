@@ -1,8 +1,8 @@
 jQuery(document).ready(function($) {
-	// buttons
-	$( ".jqButton" ).button();
+	/** BUTTONS **/
+	$(".jqButton" ).button();
 	
-	// toggle actions
+	/** TOGGLE ACTIONS */
 	$("a#login_activator").click(function(event){
 		event.preventDefault();
 		$("div#login_form").toggle();
@@ -19,10 +19,13 @@ jQuery(document).ready(function($) {
 	$("#notice,#error,#warning,#message,#success").click(function(event){
 		$("#notice,#error,#warning,#message,#success").toggle("slow");
 	});
-	//:notice, :error, :warning, :message, :success
 	
-	
-	//*** old code below ***
+	/** AJAX UPDATERS */
+	$('.page_updater').click(function(event){ // used in section/show
+		$.get("/show.js.erb", "script"); // url, [data], [callback], [dataType='script']
+	});
+
+	//*** OLD CODE BELOW ***
 	// accordion actions
 
 	// var stop = false;
