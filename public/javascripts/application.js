@@ -19,13 +19,13 @@ jQuery(document).ready(function($) {
 	$("#notice,#error,#warning,#message,#success").click(function(event){
 		$("#notice,#error,#warning,#message,#success").toggle("slow");
 	});
-	
-	/** AJAX UPDATERS */
-	$('.page_updater').click(function(event){ // used in section/show
-		$.get("/show.js.erb", "script"); // url, [data], [callback], [dataType='script']
-	});
 
-	//*** OLD CODE BELOW ***
+	/** OLD CODE BELOW */
+	// AJAX updaters - not used, because Prototype does it much more nicely!
+	// $('a.page_updater').click( {pgId: 'pass sthg here'}, function(event){ // used in section/show
+		// $.get("/show.js.erb", {pageId: event.data.pgId}, "script"); // url, [data], [callback], [dataType='script']
+	// });  SHOW.JS.ERB HAS BEEN DELETED
+	
 	// accordion actions
 
 	// var stop = false;
