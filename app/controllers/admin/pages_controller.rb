@@ -11,9 +11,15 @@ class Admin::PagesController < ApplicationController
     end
   end
 
-  def show_page # called from link to remote in sections/show by sidebar element
+  def show
     @page = Page.find(params[:id])
-		render :partial => "show", :locals => { :page => @page }
+		respond_to do |format|
+			format.js {
+				render :update do |page|
+					page.replace_html 'show_page', :partial => 'show_page', :locals => { :page => @page }
+				end
+			}
+		end
   end
 
   def new

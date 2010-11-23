@@ -4,8 +4,8 @@ class PagesController < ApplicationController
     @page = Page.find(params[:id])
 		respond_to do |format|
 			format.js {
-				render(:update) do |page| # uses Prototype, the JS framework
-					page.replace_html 'show_page', :partial => "show_page", :locals => { :page => @page }
+				render :update do |page| # uses Prototype, the JS framework
+					page.replace_html 'show_page', :partial => 'show_page', :locals => { :page => @page }
 				end
 			}
 		end
