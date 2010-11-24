@@ -56,7 +56,9 @@
 				<div id='bread_crumbs' class='span-6 last'><!--not quite working the way you'd like-->
 					<b><%= breadcrumb_content(controller.action_name,controller.controller_name) %></b>
 				</div>
-					
+				
+				<div class='hor_divider'></div>
+				
 			  <div id="flashes" class="left" style="width:910px">
 					<% names = [:notice, :error, :warning, :message, :success] %>
 					<% for name in names %>
@@ -65,7 +67,7 @@
 						<% end %>
 					<% end %>
 			  </div>
-				<div class='hor_divider'></div>
+				
 				<div id='main_content'>
 					<%= yield :layout %> <!--yields the main content-->
 				</div>

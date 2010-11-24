@@ -57,6 +57,8 @@
 					<b><%= breadcrumb_content(params[:action],params[:controller]) %></b>
 				</div>
 			
+				<div class='hor_divider'></div>
+			
 			  <div id="flashes" class="left" style="width:910px">
 				<% names = [:notice, :error, :warning, :message, :success] %>
 				<% for name in names %>
@@ -65,7 +67,7 @@
 				  <% end %>
 				<% end %>
 			  </div>
-				<div class='hor_divider'></div>
+				
 				<div id='main_content'>
 					<%= yield :layout %> <!--yields the main content-->
 				</div>

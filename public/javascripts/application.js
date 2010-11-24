@@ -16,8 +16,8 @@ jQuery(document).ready(function($) {
 	$('#help_trigger').click(function(event){
 		$("#help_area").toggle();
 	});
-	$("#notice,#error,#warning,#message,#success").click(function(event){
-		$("#notice,#error,#warning,#message,#success").toggle("slow");
+	$("#errorExplanation,.errorExplanation,#notice,#error,#warning,#message,#success").click(function(event){
+		$("#errorExplanation,.errorExplanation,#notice,#error,#warning,#message,#success").toggle("slow");
 	});
 
 	/** OLD CODE BELOW */

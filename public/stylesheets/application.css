@@ -287,7 +287,9 @@ margin-right: 1em;
 /* =============================================== */
 /*  9. MESSAGES 
 /* =============================================== */
-
+#errorExplanation, .errorExplanation, .error, .notice, .warning, .message, .success:hover{
+cursor: pointer;
+}
 .error, .notice, .warning, .message, .success {
 padding:.8em;
 margin-bottom:1em;

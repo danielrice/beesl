@@ -8,6 +8,6 @@
 		</div>
 	<% end %>
 	<div>
-		<p><%= panel.content %></p>
+		<p><%=sanitize panel.content %></p><!--sanitize helper removes <p> tags which get added on by ckeditor oddly-->
 	</div>
 </div>
