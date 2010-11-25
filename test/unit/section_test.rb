@@ -1,9 +1,8 @@
 require 'test_helper'
 
 class SectionTest < ActiveSupport::TestCase
-
-	test "BLABLABLA" do
-		assert true
-	end
-
+  # Replace this with your real tests.
+  test "the truth" do
+    assert true
+  end
 end
