@@ -10,7 +10,11 @@ Beesl::Application.routes.draw do
 	resource :user_session, :only => [ :create, :destroy ]
 	
 	namespace "admin" do
-		resources :sections, :collection => { :sort => :post }
+		resources :sections do
+			collection do
+				post 'sort'
+			end
+		end
 		resources :panels, :except => [ :show ]
 		resources :pages
 	end
