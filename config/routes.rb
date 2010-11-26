@@ -1,4 +1,6 @@
 Beesl::Application.routes.draw do
+  resources :panels
+
   resources :pages
 
   resources :sections
