@@ -1,4 +1,6 @@
 Beesl::Application.routes.draw do
+  resources :pages
+
   resources :sections
 
   # The priority is based upon order of creation:
