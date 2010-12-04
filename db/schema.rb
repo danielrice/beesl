@@ -32,19 +32,18 @@ ActiveRecord::Schema.define(:version => 20101106150449) do
 
   create_table "pages", :force => true do |t|
     t.string   "name"
+    t.integer  "section_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "section_id"
   end
 
   create_table "panels", :force => true do |t|
     t.string   "title"
-    t.text     "content",            :limit => 65536
+    t.text     "content",            :limit => 16777215
     t.integer  "page_id"
-    t.boolean  "published",                           :default => true
+    t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "position"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -53,10 +52,10 @@ ActiveRecord::Schema.define(:version => 20101106150449) do
 
   create_table "sections", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.integer  "position"
     t.boolean  "has_sidebar", :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
