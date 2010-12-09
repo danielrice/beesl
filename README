@@ -1,13 +1,11 @@
-This will hopefully be the beesl app in Rails 3, started from scratch in Rails 3.
+This is the beesl app in Rails 3.
 
 TODO:
 -new section issues (check for nil!):
   o an empty section on the frontside should display "currently under construction"
 	o an empty section on the backside should provide options to fill the section
--testing
+-testing (!)
 -db setup - mysql2
 
-...
+note:
 -before production, run bundle package to get all needed gems in vendor/cache
-
-~David Zhang
