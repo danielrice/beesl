@@ -1,12 +1,18 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
-#gem 'sqlite3-ruby', :require => 'sqlite3'
-gem 'mysql2'
 gem 'authlogic', '2.1.6'
 gem 'paperclip'
 gem 'ckeditor', '3.4.2.pre'
 gem 'acts_as_list'
+
+group :production do
+	gem 'mysql2'
+end
+
+group :development, :test do
+	gem 'sqlite3-ruby', :require => 'sqlite3'
+end
 
 # Use unicorn as the web server
 # gem 'unicorn'

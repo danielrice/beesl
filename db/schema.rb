@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(:version => 20101106150449) do
 
   create_table "panels", :force => true do |t|
     t.string   "title"
-    t.text     "content",            :limit => 16777215
+    t.text     "content",            :limit => 2147483647
     t.integer  "page_id"
     t.integer  "position"
     t.datetime "created_at"
