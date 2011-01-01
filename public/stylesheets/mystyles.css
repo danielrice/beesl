@@ -164,6 +164,7 @@ font-family: Lucida, sans-serif;
 ul.navbarlist a:hover {
 color: #FDD44A;
 background: #DC7130;
+text-decoration: none;
 }
 ul.navbarlist li.highlight {
 background: pink;
@@ -176,6 +177,10 @@ padding-top: 4px;
 /*width: 930px;*/
 }
 div#show_page{ /* if you add a border here, oddly, the div will not be a right col */
+}
+div.safe_page{
+padding: 4em;
+background: #ddd;
 }
 /* =============================================== */
 /*  6. SIDEBAR

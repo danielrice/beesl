@@ -1,7 +1,13 @@
 <!-- pages/_show_page -->
 <!-- assumed variable: page -->
 <div class='panels_container'>
-	<% for panel in page.panels %>
-		<%= render :partial => 'panels/show', :locals => { :panel => panel } %>
+	<% if page.panels.count > 0 %>
+		<% for panel in page.panels %>
+			<%= render :partial => 'panels/show', :locals => { :panel => panel } %>
+		<% end %>
+	<% else %>
+		<div class='safe_page'>
+			This page is currently under construction.
+		</div>
 	<% end %>
 </div>

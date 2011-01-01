@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
-gem 'authlogic', '2.1.6'
+gem 'authlogic', :git => "git://github.com/radar/authlogic.git"
 gem 'paperclip'
 gem 'ckeditor', '3.4.2.pre'
 gem 'acts_as_list'

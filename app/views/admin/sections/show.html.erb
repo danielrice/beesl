@@ -6,9 +6,19 @@
 			<li><%= link_to "#{page.name}", admin_page_path(page), :remote => true %></li>
 			<hr/>
 		<% end %>
+			<% unless @page.nil? %>
+				<li><%= link_to "*New Page", new_admin_page_path %></li>
+			<% end %>
 		</ul>
 	</div>
 <% end %>
-<div id='show_page' <% if @section.has_sidebar %>class='span-18 last vert_divider'<% end %>>
-	<%= render :partial => 'admin/pages/show_page', :locals => { :page=>@page } %>
-</div>
+
+<% unless @page.nil? %>
+	<div id='show_page' <% if @section.has_sidebar %>class='span-18 last vert_divider'<% end %>>
+		<%= render :partial => 'admin/pages/show_page', :locals => { :page=>@page } %>
+	</div>
+<% else %>
+	<div class='safe_page'>
+		This section is empty. <%= link_to "Create a page", new_admin_page_path %>
+	</div>
+<% end %>

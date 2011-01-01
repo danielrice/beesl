@@ -1,9 +1,15 @@
 <!-- admin/pages/_show_page -->
 <!-- assumed variable: page -->
 <div class='panels_container'>
-	<% for panel in page.panels %>
-		<%= link_to "X", admin_panel_path(panel), :class=>"myButton right", :method => :delete, :confirm => "Are you sure you want to delete the panel '#{panel.title}'?" %>
-		<%= link_to "Edit", edit_admin_panel_path(panel), :class=>"myButton right" %>
-		<%= render :partial => 'panels/show', :locals => { :panel => panel } %>
+	<% if page.panels.count > 0 %>
+		<% for panel in page.panels %>
+			<%= link_to "X", admin_panel_path(panel), :class=>"myButton right", :method => :delete, :confirm => "Are you sure you want to delete the panel '#{panel.title}'?" %>
+			<%= link_to "Edit", edit_admin_panel_path(panel), :class=>"myButton right" %>
+			<%= render :partial => 'panels/show', :locals => { :panel => panel } %>
+		<% end %>
+	<% else %>
+		<div class='safe_page'>
+			This page has no panels. <%= link_to "Create a panel", new_admin_panel_path %>
+		</div>
 	<% end %>
 </div>

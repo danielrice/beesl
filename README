@@ -4,8 +4,7 @@ TODO:
 -new section issues (check for nil!):
   o an empty section on the frontside should display "currently under construction"
 	o an empty section on the backside should provide options to fill the section
--testing (!)
--db setup - mysql2
+-testing, BDD
 
-note:
+Note:
 -before production, run bundle package to get all needed gems in vendor/cache

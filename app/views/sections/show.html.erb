@@ -9,6 +9,13 @@
 		</ul>
 	</div>
 <% end %>
-<div id='show_page' <% if @section.has_sidebar %>class='span-18 last vert_divider'<% end %>>
-	<%= render :partial => 'pages/show_page', :locals => { :page=>@page } %>
-</div>
+
+<% unless @page.nil? %>
+	<div id='show_page' <% if @section.has_sidebar %>class='span-18 last vert_divider'<% end %>>
+		<%= render :partial => 'pages/show_page', :locals => { :page=>@page } %>
+	</div>
+<% else %>
+	<div class='safe_page'>
+		This section is under construction.
+	</div>
+<% end %>

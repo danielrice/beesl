@@ -1,5 +1,4 @@
 class Section < ActiveRecord::Base
-	has_many :pages
-	after_destroy do |section| section.pages.delete_all end
+	has_many :pages, :dependent => :destroy
 	acts_as_list
 end
