@@ -5,4 +5,4 @@ TODO:
 -panel_test incomplete
 
 Note:
--before production, run bundle package to get all needed gems in vendor/cache
+-before production, run "bundle package" to get all needed gems in vendor/cache
