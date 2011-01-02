@@ -1,6 +1,11 @@
+<!--admin/sections/edit-->
 <div class="classic">
 	<h3>Edit Section</h3>
 	<%= render :partial => 'form', :locals => { :section => @section, :button_value=>"Update" } %>
+	<%= link_to 'Delete', admin_section_path(@section), 
+		:confirm=>"Are you sure?  Deleting a section is permanent, and all its panels will be gone!",
+		:method => :delete, :style=>"font-size: 10px; margin-left: 3px" %>
+	<br><br>
 	<%= link_to "<< Back to all sections", admin_sections_path %>
 </div>
 <%= link_to "<< Back to general controls", '/backside' %>

@@ -5,7 +5,7 @@
 	<div class="rightArea">
 		<ul>
 			<li>drag to change the order</li>
-			<li>edit and delete options</li>
+			<li>edit option</li>
 		</ul>
 	</div>
 	
@@ -16,7 +16,6 @@
 				<li class="leftComponent"><span class="handle"> [drag] </span> <%= section.name %></li>
 				<li class="rightComponent">
 					<%= link_to "Edit", edit_admin_section_path(section) %>
-					<%= link_to 'X', admin_section_path(section), :confirm=>"Are you sure?  Deleting a section is permanent, and all its panels will be gone!", :method => :delete, :class=>'delete_link' %>
 				</li>
 			</ul>
 		<% end %>

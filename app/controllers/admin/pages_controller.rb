@@ -16,6 +16,7 @@ class Admin::PagesController < ApplicationController
 		respond_to do |format|
 			format.js {
 				render :update do |page|
+					page.replace_html 'sidebar_area', :partial => 'admin/sections/sidebar', :locals => { :section => @page.section, :page => @page }
 					page.replace_html 'show_page', :partial => 'show_page', :locals => { :page => @page }
 				end
 			}

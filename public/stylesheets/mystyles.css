@@ -209,6 +209,11 @@ margin: 0;
 color: #A42630;
 font-weight: bolder;
 font-family: serif;
-/*color: #FDD44A;
-background: #DC7130;*/
+}
+#sidebar_div ul.sidebar_list a.selected{
+color: #A42630;
+}
+#sidebar_div ul.sidebar_list a.selected:hover{
+color: #A42630;
+font-family: serif;
 }
