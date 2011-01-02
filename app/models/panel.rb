@@ -1,5 +1,5 @@
 class Panel < ActiveRecord::Base
-	include Paperclip
+	include Paperclip # ...
 
 	belongs_to :page
 	acts_as_list
@@ -8,8 +8,9 @@ class Panel < ActiveRecord::Base
 	
 	validates_presence_of :page_id
 	
-	validates_attachment_content_type :image, :content_type=>['image/jpeg', 'image/jpg', 'image/png', 'image/gif'], 
-		:message => 'can only be jpeg, jpg, png, or gif',
+	validates_attachment_content_type :image,
+		:content_type=>['image/jpeg', 'image/jpg', 'image/png', 'image/bmp', 'image/gif'], 
+		:message => 'can only be jpeg, jpg, png, bmp, or gif',
 		:unless => Proc.new { |photo| photo[:image].nil? }
 
 end

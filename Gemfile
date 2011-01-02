@@ -13,6 +13,8 @@ end
 group :development, :test do
 	gem 'sqlite3-ruby', :require => 'sqlite3'
 	gem 'factory_girl_rails'
+	gem 'shoulda'
+	gem 'forgery'
 end
 
 # Use unicorn as the web server

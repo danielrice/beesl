@@ -1,8 +1,10 @@
 require 'test_helper'
 
 class PageTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
-  end
+  context "A page" do
+		should belong_to(:section)
+		should have_many(:panels).dependent(:destroy)
+		should validate_presence_of :name
+		should validate_presence_of :section_id
+	end
 end
