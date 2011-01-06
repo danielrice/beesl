@@ -1,6 +1,22 @@
-# Users
+# -- Users --
 User.create(:login=>"dakota",:password=>"northandsouth",:password_confirmation=>"northandsouth",:email=>"dmonopoly10@gmail.com")
 
+# -- Sections --
+edu = Section.find_or_create_by_name(:name => "Education", :has_sidebar => true)
+res = Section.find_or_create_by_name(:name => "Research", :has_sidebar => true)
+fac = Section.find_or_create_by_name(:name => "Faculty and members", :has_sidebar => true)
+adv = Section.find_or_create_by_name(:name => "Advisory board")
+fin = Section.find_or_create_by_name(:name => "Financial assistance", :has_sidebar => true)
+pro = Section.find_or_create_by_name(:name => "Program sponsors")
+ser = Section.find_or_create_by_name(:name => "Services", :has_sidebar => true)
+
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque bibendum interdum turpis sed volutpat. Morbi porttitor, enim sit amet porta dapibus, enim purus consectetur nunc, vel varius massa tortor quis sem. Maecenas sit amet felis at lectus blandit cursus. Duis leo dui, viverra nec porta ut, pellentesque ac leo. Donec pretium cursus volutpat. Aenean consequat metus varius erat venenatis molestie pharetra dolor pharetra. Proin condimentum enim scelerisque tortor aliquet imperdiet. Vestibulum ullamcorper luctus purus, et dictum nisl bibendum vitae. Vestibulum hendrerit sagittis purus, at accumsan purus consectetur et. Pellentesque vehicula, purus in porta dapibus, augue ipsum luctus elit, ut varius quam diam pharetra diam. Phasellus sapien orci, gravida nec dapibus in, porta id urna. Nam iaculis justo sit amet massa euismod egestas. Vestibulum tincidunt, metus non dapibus euismod, ipsum ligula luctus tellus, a sagittis urna tellus vel sapien."
+# -- Pages --
+Page.delete_all
+# edu pages
+
+
+=begin
 # Sections
 n = Section.find_or_create_by_name(:name => "News")
 e = Section.find_or_create_by_name(:name => "Education", :has_sidebar => true)
@@ -40,3 +56,4 @@ p5.panels.create(:title => 'Page5Panel1', :content => text)
 p5.panels.create(:title => 'Page5Panel2', :content => text)
 p6.panels.create(:title => 'Page6Panel1', :content => text)
 p6.panels.create(:title => 'Page6Panel2', :content => text)
+=end

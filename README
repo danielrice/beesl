@@ -4,5 +4,14 @@ TODO:
 -testing, BDD
 -panel_test incomplete
 
+Steps:
+while BDD+
+1.get app up
+2.show ms. r. / explain
+3.let her decide how to organize things / pictures
+4.by this point, little app changes like size or color should be set.
+5.get app truly up
+6.add your local testing work somewhere in the process
+
 Note:
 -before production, run "bundle package" to get all needed gems in vendor/cache
