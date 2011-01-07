@@ -53,8 +53,13 @@
 						<% end %>
 					</ul>
 				</div>
-				<div id='bread_crumbs' class='span-6 last'><!--not quite working the way you'd like-->
-					<b><%= breadcrumb_content(controller.action_name,controller.controller_name) %></b>
+				<div id='breadcrumbs' class='span-6 last'><!--not quite working the way you'd like-->
+					<% section_name = breadcrumb_content(controller.action_name,controller.controller_name) %>
+					<b><%= section_name %></b>
+					<div id='breadcrumb_page'>
+						<!--page_id of -1 means the section was JUST clicked on - no remote action yet-->
+						<%= render :partial => "layouts/breadcrumb_page", :locals => { :page_id => -1, :section_name => section_name } %>
+					</div>
 				</div>
 				
 				<div class='hor_divider'></div>
