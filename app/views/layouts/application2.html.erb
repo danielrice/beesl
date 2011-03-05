@@ -31,16 +31,16 @@
 					</div>
 					<div id='login_area'>
 						<% if current_user %>
-							Logged in as <b><%= link_to current_user.login, edit_user_path(current_user) %></b> | 
-							<%= link_to 'Frontside', '/' %> | 
-							<%= link_to 'Backside', '/backside', :style=>"text-decoration:underline" %> | 
+							Logged in as <b><%= link_to current_user.login, edit_user_path(current_user) %></b> |
+							<%= link_to 'Backside', '/backside', :style=>"text-decoration:underline" %> |
+							<%= link_to 'Frontside', '/' %> |
 							<%= link_to 'Logout', '/logout' %>
 						<% end %>
 					</div>
 				</div>
 			</div>
 		</div>
-		
+
 		<div id='container_bd' class='span-24 last'>
 			<div id='main'>
 				<div class='hor_divider'></div>
@@ -52,13 +52,13 @@
 						<% end %>
 					</ul>
 				</div>
-			
+
 				<div id='breadcrumbs' class='span-6 last'><!--not quite working the way you'd like-->
 					<b><%= breadcrumb_content(params[:action],params[:controller]) %></b>
 				</div>
-			
+
 				<div class='hor_divider'></div>
-			
+
 			  <div id="flashes" class="left" style="width:910px">
 				<% names = [:notice, :error, :warning, :message, :success] %>
 				<% for name in names %>
@@ -67,14 +67,14 @@
 				  <% end %>
 				<% end %>
 			  </div>
-				
+
 				<div id='main_content'>
 					<%= yield :layout %> <!--yields the main content-->
 				</div>
-				
+
 		  </div>
 		</div>
-		
+
 		<div id='container_ft' class='span-24 last'>
 			<div id='ft'>
 		    <ul>
@@ -87,3 +87,4 @@
   </div>
 </body>
 </html>
+

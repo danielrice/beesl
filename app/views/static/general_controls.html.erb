@@ -1,7 +1,7 @@
 <!-- admin/sections/index - BACKSIDE HOME PAGE -->
 <div>
 	<h3>Make something new</h3>
-	
+
 	<%= link_to "New panel >>", new_admin_panel_path, :class => "jqButton" %>
 	<br/>
 	<br/>
@@ -12,9 +12,9 @@
 
 	<br/>
 	<br/>
-	
+
 	<h3>Manage what you have</h3>
-	
+
 	<%= link_to "Manage panels >>", admin_panels_path, :class => "jqButton" %>
 	<br/>
 	<br/>
@@ -26,8 +26,8 @@
 	<br/>
 
 	<h3>User accounts</h3>
-	
-	<a href="#" id="users_index_trigger" class="jqButton">All users >></a>
+
+	<a href="javascript:void(0)" id="users_index_trigger" class="jqButton">All users >></a>
 	<%= render :partial => 'users/index', :locals => { :users => User.all } %>
 
 	<br/>
@@ -39,19 +39,20 @@
 <br/>
 <div>
 	<h3>Help</h3>
-	<a href="#" id="help_trigger" class="jqButton">Show >></a>
+	<a href="javascript:void(0)" id="help_trigger" class="jqButton">Show >></a>
 	<br/>
 	<div id="help_area" style="display:none">
 		<p style="font-family: Times, sans-serif; font-size: 18px">
 			A <b>section</b> is any of the main links you can click on the horizontal bar at the top (excluding "General Controls").<br/>
 			- It has a name and the option to have a sidebar.<br/>
 			A section has many <b>pages</b>.<br/>
-			- A page merely has a name, and its name appears in the sidebar of a section if 
+			- A page merely has a name, and its name appears in the sidebar of a section if
 			the section has the option to have a sidebar selected.<br/>
 			A page has many <b>panels</b>, and each panel has a title, optional image, and content.<br/>
 			- Panels are displayed one after another for a given page.
 		</p>
-		
+
 		<%= image_tag "diagram1.png", :height=>"80%", :width=>"90%" %>
 	</div>
 </div>
+
