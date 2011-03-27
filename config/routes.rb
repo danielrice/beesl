@@ -27,7 +27,7 @@ Beesl::Application.routes.draw do
 	
 	match '/signup' => 'users#new'
   match '/logout' => 'user_sessions#destroy'
-	match '/backside' => 'static#general_controls'
+	match '/admin' => 'static#general_controls'
 	
 	root :to => "sections#index"
 

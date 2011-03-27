@@ -13,7 +13,7 @@ Uses CKEditor-->
 		<%= f.file_field :image %>
 		<% if @panel.image.exists? %>
 			<p>
-				<%= image_tag @panel.image.url %>
+				<%= image_tag @panel.image.url(:thumb) %>
 				<%= link_to 'Remove image', { :action => 'delete_image', :id => @panel.id }, :confirm => "Other changes on this page will not be updated yet." %>
 			</p>
 		<% end %>

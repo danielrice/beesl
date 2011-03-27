@@ -4,7 +4,7 @@ class Panel < ActiveRecord::Base
 	belongs_to :page
 	acts_as_list
 	
-	has_attached_file :image, :styles => { :medium => "300x300>",:thumb => "100x100>" }, :whiny => false
+	has_attached_file :image, :styles => { :thumb => "100x100>" }, :whiny => false
 	
 	validates_presence_of :page_id
 	

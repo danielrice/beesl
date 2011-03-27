@@ -7,7 +7,7 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       #flash[:notice] = "Login successful!"
-      redirect_to '/backside'
+      redirect_to '/admin'
     else
 			flash[:error] = "Password/login combination incorrect."
       redirect_to '/'

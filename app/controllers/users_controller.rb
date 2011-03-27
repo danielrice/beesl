@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
 			flash[:notice] = "New user successfully created"
-      redirect_to '/backside'
+      redirect_to '/admin'
     else
       render :action => :new
     end

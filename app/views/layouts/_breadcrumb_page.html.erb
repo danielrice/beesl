@@ -2,9 +2,9 @@
 <% if page_id == -1 %> <!--display name of first page in section-->
 	<% section = Section.find_by_name(section_name) %>
 	<% unless section.nil? || section.pages.empty? || section.pages.nil? %>
-	<b><%= section.pages.first.name %></b>
+	<b> > <%= section.pages.first.name %></b>
 	<% end %>
 <% else %>
-	<b><%= Page.find(page_id).name %></b>
+	<b> > <%= Page.find(page_id).name %></b>
 <% end %>
 

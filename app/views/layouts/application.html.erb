@@ -31,8 +31,8 @@
 					<div id='login_area'>
 						<% if current_user %>
 							Logged in as <b><%= current_user.login %></b> | 
-							<%= link_to 'Frontside', '/', :style=>"text-decoration:underline" %> | 
-							<%= link_to 'Backside', '/backside' %> | 
+							<%= link_to 'The Back', '/admin' %> | 
+							<%= link_to 'The Front', '/', :style=>"text-decoration:underline" %> | 
 							<%= link_to 'Logout', '/logout' %>
 						<% end %>
 					</div>
@@ -42,6 +42,14 @@
 		
 		<div id='container_bd' class='span-24 last'>
 			<div id='main'>
+				<div id='breadcrumbs' class='span-6 last'><!--most recent work here-->
+					<% section_name = breadcrumb_content(controller.action_name,controller.controller_name) %>
+					<b><%= section_name %></b>
+					<div id='breadcrumb_page' style='display:inline'>
+						<!--page_id of -1 means the section was JUST clicked on - no remote action yet-->
+						<%= render :partial => "layouts/breadcrumb_page", :locals => { :page_id => -1, :section_name => section_name } %>
+					</div>
+				</div>
 				<div class='hor_divider'></div>
 				<div id='navbar' class='span-16'>
 					<ul class='navbarlist'>
@@ -52,14 +60,6 @@
 							</li>
 						<% end %>
 					</ul>
-				</div>
-				<div id='breadcrumbs' class='span-6 last'><!--most recent work here-->
-					<% section_name = breadcrumb_content(controller.action_name,controller.controller_name) %>
-					<b><%= section_name %></b>
-					<div id='breadcrumb_page'>
-						<!--page_id of -1 means the section was JUST clicked on - no remote action yet-->
-						<%= render :partial => "layouts/breadcrumb_page", :locals => { :page_id => -1, :section_name => section_name } %>
-					</div>
 				</div>
 				
 				<div class='hor_divider'></div>
