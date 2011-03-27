@@ -3,7 +3,7 @@ class CreateSections < ActiveRecord::Migration
     create_table :sections do |t|
 			t.string :name
 			t.integer :position
-			t.boolean :has_sidebar, :default => false
+			t.boolean :has_sidebar, :default => true
       t.timestamps
     end
   end
@@ -12,3 +12,4 @@ class CreateSections < ActiveRecord::Migration
     drop_table :sections
   end
 end
+

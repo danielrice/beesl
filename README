@@ -1,11 +1,11 @@
 This is the beesl app in Rails 3.
 
 TODO:
--testing, BDD
--panel_test incomplete
+-image stuff
+-more testing
 
 Steps:
-while BDD+
+-1.testing.
 0.reasonable design changes
 1.get app up
 2.show ms. r. / explain
@@ -16,3 +16,4 @@ while BDD+
 
 Note:
 -before production, run "bundle package" to get all needed gems in vendor/cache
+
