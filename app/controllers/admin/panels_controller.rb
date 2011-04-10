@@ -29,7 +29,7 @@ class Admin::PanelsController < ApplicationController
 
     respond_to do |format|
       if @panel.save
-        format.html { redirect_to(admin_panels_path, :notice => "Panel '#{@panel.title}' successfully created.") }
+        format.html { redirect_to(admin_panels_path, :notice => "Panel '#{@panel.title}' (of #{@panel.page.name} page) successfully created.") }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @panel.errors, :status => :unprocessable_entity }
@@ -42,7 +42,8 @@ class Admin::PanelsController < ApplicationController
 		
     respond_to do |format|
       if @panel.update_attributes(params[:panel])
-        format.html { redirect_to(admin_panels_path, :notice => "Panel '#{@panel.title}' was successfully updated.") }
+				flash[:notice] = "Panel '#{@panel.title}' (#{@panel.page.section.name} section) was successfully updated."
+        format.html { redirect_to(admin_panels_path) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

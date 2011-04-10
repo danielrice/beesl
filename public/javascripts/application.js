@@ -19,36 +19,4 @@ jQuery(document).ready(function($) {
 	$("#errorExplanation,.errorExplanation,#notice,#error,#warning,#message,#success").click(function(event){
 		$("#errorExplanation,.errorExplanation,#notice,#error,#warning,#message,#success").toggle("slow");
 	});
-
-	/** OLD CODE BELOW */
-	// AJAX updaters - not used, because Prototype does it much more nicely!
-	// $('a.page_updater').click( {pgId: 'pass sthg here'}, function(event){ // used in section/show
-		// $.get("/show.js.erb", {pageId: event.data.pgId}, "script"); // url, [data], [callback], [dataType='script']
-	// });  SHOW.JS.ERB HAS BEEN DELETED
-	
-	// accordion actions
-
-	// var stop = false;
-	// $("#accordion h3").click(function(event) {
-		// if (stop){
-			// event.stopImmediatePropagation();
-			// event.preventDefault();
-			// stop = false;
-		// }
-	// });
-	// $("#accordion").accordion({
-		// header: "> div > h3",
-		// collapsible: true,
-		// active: false,
-		// autoHeight: false
-	// }).sortable({
-		// axis: "y",
-		// update: function(){
-		// },
-		// stop: function(event, ui){
-			// stop = true;
-		// }
-	// });
-
 });
-/************FUNCTIONS**************/
