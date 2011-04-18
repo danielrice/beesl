@@ -2,11 +2,14 @@
 <div id='sidebar_div' class='span-3'>
 	<ul class='sidebar_list'>
 	<% for some_page in section.pages %>
+		<li>
 		<% if page == some_page %>
-			<li><%= link_to "#{some_page.name}", admin_page_path(some_page), :remote => true, :class=>"selected" %></li>
+			<%= link_to "#{some_page.name}", admin_page_path(some_page), :remote => true, :class=>"selected" %>
 		<% else %>
-			<li><%= link_to "#{some_page.name}", admin_page_path(some_page), :remote => true %></li>
+			<%= link_to "#{some_page.name}", admin_page_path(some_page), :remote => true %>
 		<% end %>
+		<%= link_to "Edit", [:edit, :admin, some_page], :style => "font-size: 10px" %>
+		</li>
 		<hr/>
 	<% end %>
 	</ul>

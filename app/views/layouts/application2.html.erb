@@ -43,18 +43,17 @@
 		
 		<div id='container_bd' class='span-24 last'>
 			<div id='main'>
+				<div id='breadcrumbs'>
+					<b><%= breadcrumb_content(params[:action],params[:controller]) %></b>
+				</div>
 				<div class='hor_divider'></div>
-				<div id='navbar' class='span-16'>
+				<div id='navbar' class='span-24 last'>
 					<ul class='navbarlist'>
 						<li><%= link_to "General Controls", '/admin', :style=>'font-style: italic' %></li>
 						<% for section in Section.all(:order => "position") %>
 							<li><%= link_to section.name, admin_section_path(section) %></li>
 						<% end %>
 					</ul>
-				</div>
-			
-				<div id='breadcrumbs' class='span-6 last'><!--not quite working the way you'd like-->
-					<b><%= breadcrumb_content(params[:action],params[:controller]) %></b>
 				</div>
 			
 				<div class='hor_divider'></div>
