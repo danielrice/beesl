@@ -24,8 +24,8 @@ CKEDITOR.editorConfig = function( config )
   // works only with en, ru, uk languages
   config.extraPlugins = "embed,attachment";
   
-  config.toolbar = 'asdf';
-	
+	config.toolbar = 'Easy';
+  
   config.toolbar_Easy =
     [
         ['Source','-','Preview','Templates'],
@@ -39,15 +39,4 @@ CKEDITOR.editorConfig = function( config )
         ['Link','Unlink','Anchor'],
         ['Image','Embed','Flash','Attachment','Table','HorizontalRule','Smiley','SpecialChar','PageBreak']
     ];
-	/*
-		These are the only ones I have found to work: (note that the '-' or separation of [] simply means a section divider for buttons)
-	  config.toolbar_Easy =
-    [
-        ['Maximize'],
-        ['Undo','Redo','-','SelectAll','RemoveFormat'],
-        ['Bold','Italic','-','Subscript','Superscript'],
-        ['Link','Unlink'],
-        ['Smiley','SpecialChar']
-    ];
-	*/
 };
